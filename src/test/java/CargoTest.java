@@ -63,6 +63,4 @@ public class CargoTest {
         assertEquals(cargo_2.getDestination().getNumberOfFlat(), "23");
 
     }
-
-
 }

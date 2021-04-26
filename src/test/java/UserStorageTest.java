@@ -1,18 +1,13 @@
-import by.student.trainDesign.domain.Address;
 import by.student.trainDesign.domain.Age;
 import by.student.trainDesign.domain.User;
 import by.student.trainDesign.storage.UserStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class UserStorageTest {
     private by.student.trainDesign.storage.UserStorage userStorage;
-    private final Address address = new Address("Belarus", "Brest", "Leninist", "Alaya", 5);
-    private final Date expectedDeliveryDate = new Date(System.currentTimeMillis() + 172_800_000);
 
     @BeforeEach
     public void before() {

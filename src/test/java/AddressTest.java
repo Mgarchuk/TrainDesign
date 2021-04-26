@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AddressTest {
 
-
     @Test
     public void createAddressTest() {
 
@@ -44,6 +43,5 @@ public class AddressTest {
         assertEquals(address_4.getStreet(), "Orda");
         assertEquals(address_4.getNumberOfHouse(), "8/1");
         assertEquals(address_4.getNumberOfFlat(), "10a");
-
     }
 }

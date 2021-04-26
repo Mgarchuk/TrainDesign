@@ -1,5 +1,8 @@
 package by.student.trainDesign.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Cargo {
     private final int number;
     private final double weight;
@@ -9,6 +12,8 @@ public class Cargo {
     private Address destination;
     private final TypeOfCargo typeOfCargo;
 
+    private static final Logger logger = LoggerFactory.getLogger(Cargo.class.getName());
+
     public Cargo(int number, double weight, TypeOfCargo typeOfCargo, Dimensions dimensions, Station dispatchStation, Station arrivalStation, Address destination) {
         this.number = number;
         this.weight = weight;
@@ -17,6 +22,8 @@ public class Cargo {
         this.dispatchStation = dispatchStation;
         this.arrivalStation = arrivalStation;
         this.destination = destination;
+
+        logger.info("Carriage node created");
     }
 
     public int getNumber() {

@@ -1,5 +1,8 @@
 package by.student.trainDesign.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Address {
 
     private final String country;
@@ -9,12 +12,15 @@ public class Address {
     private final String numberOfHouse;
     private String numberOfFlat;
 
+    private static final Logger logger = LoggerFactory.getLogger(Address.class.getName());
+
     public Address(String country, String region, String district, String street, String numberOfHouse) {
         this.country = country;
         this.region = region;
         this.district = district;
         this.street = street;
         this.numberOfHouse = numberOfHouse;
+        logger.info("Address created");
     }
 
     public Address(String country, String region, String district, String street, String numberOfHouse, String numberOfFlat) {

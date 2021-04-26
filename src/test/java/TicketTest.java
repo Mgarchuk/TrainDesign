@@ -15,7 +15,6 @@ public class TicketTest {
     }
 
     @Test
-    //мб дату обработать без new
     public void createTicketTest() {
         ArrayList<Ticket> ticketsList = new ArrayList<>();
 
@@ -84,6 +83,5 @@ public class TicketTest {
         assertEquals(ticket_4.getDepartureDate(), new Date(100));
         assertEquals(ticket_4.getArrivalDate(), new Date(900));
         assertTrue(ticket_4.isBedLinenIncluded());
-
     }
 }

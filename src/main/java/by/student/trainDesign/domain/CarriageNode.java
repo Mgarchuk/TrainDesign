@@ -1,13 +1,21 @@
 package by.student.trainDesign.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CarriageNode {
     private Carriage value;
     private CarriageNode next, previous;
+
+    private static final Logger logger = LoggerFactory.getLogger(Carriage.class.getName());
+
 
     public CarriageNode(Carriage value, CarriageNode next, CarriageNode previous) {
         this.value = value;
         this.next = next;
         this.previous = previous;
+
+        logger.info("Carriage node created");
     }
 
     public CarriageNode(Carriage value) {

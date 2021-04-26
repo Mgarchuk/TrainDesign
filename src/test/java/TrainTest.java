@@ -12,8 +12,6 @@ public class TrainTest {
         return new Carriage(number, 1.0, null, 1.0, 1.0, 1);
     }
 
-    /// тесты для добавления, удаления, и ГЛАВНОЕ ДЛЯ ДОБАВЛЕНИЯ + УДАЛЕНИЯ
-
     @Test
     public void addingTest() {
 

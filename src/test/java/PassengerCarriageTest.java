@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class PassengerCarriageTest {
 
-    //мб сделать trackWidth по умолчанию
     private PassengerCarriage getRandomPassengerCarriage(int number) {
         return new PassengerCarriage(number, 4500, new Date(5000), 0.8, 2.8,
                 20, 40, TypeOfPassengerCarriage.COMPARTMENT);

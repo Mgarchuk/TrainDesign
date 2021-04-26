@@ -1,6 +1,5 @@
 package by.student.trainDesign.domain;
 
-import by.student.trainDesign.storage.CargoStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +34,8 @@ public class User {
         this.lastName = lastName;
         this.age = age;
         this.isTrainDrivenLicense = isTrainDrivenLicense;
+
+        logger.info("User created");
     }
 
     public User(String id, String firstName, String lastName, String patronymic, Age age) {
@@ -100,6 +101,7 @@ public class User {
             throw new IllegalArgumentException();
         }
         this.age = Age.of(age);
+
         logger.info("Age set");
     }
 
@@ -126,6 +128,7 @@ public class User {
     public void addTicket(Ticket ticket, String userId) {
         ticket.setUserId(userId);
         this.tickets.add(ticket);
+
         logger.info("Ticket with userId: {} was added", userId);
     }
 
@@ -138,5 +141,4 @@ public class User {
         }
         logger.info("Ticket with id: {} was canceled", ticketId);
     }
-
 }

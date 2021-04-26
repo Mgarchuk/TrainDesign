@@ -12,8 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LocomotiveStorageTest {
     private by.student.trainDesign.storage.LocomotiveStorage locomotiveStorage;
-    private final Address address = new Address("Belarus", "Brest", "Leninist", "Alaya", 5);
-    private final Date expectedDeliveryDate = new Date(System.currentTimeMillis() + 172_800_000);
 
     @BeforeEach
     public void before() {

@@ -11,8 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PassengerCarriageStorageTest {
     private by.student.trainDesign.storage.PassengerCarriageStorage passengerCarriageStorage;
-    private final Address address = new Address("Belarus", "Brest", "Leninist", "Alaya", 5);
-    private final Date expectedDeliveryDate = new Date(System.currentTimeMillis() + 172_800_000);
 
     @BeforeEach
     public void before() {
@@ -50,7 +48,6 @@ public class PassengerCarriageStorageTest {
                 0.9, 2.8, 24, 96, TypeOfPassengerCarriage.RESERVED_SEAT);
         assertThrows(UnsupportedOperationException.class, () -> passengerCarriageStorage.addPassengerCarriage(passengerCarriage));
         assertThrows(UnsupportedOperationException.class, () -> passengerCarriageStorage.getPassengerCarriage(10));
-
     }
 
     @Test

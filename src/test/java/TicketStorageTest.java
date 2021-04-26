@@ -1,4 +1,3 @@
-import by.student.trainDesign.domain.Address;
 import by.student.trainDesign.domain.Station;
 import by.student.trainDesign.domain.Ticket;
 import by.student.trainDesign.storage.TicketStorage;
@@ -11,9 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TicketStorageTest {
     private by.student.trainDesign.storage.TicketStorage ticketStorage;
-    private final Address address = new Address("Belarus", "Brest", "Leninist",
-            "Alaya", 5);
-    private final Date expectedDeliveryDate = new Date(System.currentTimeMillis() + 172_800_000);
 
     @BeforeEach
     public void before() {

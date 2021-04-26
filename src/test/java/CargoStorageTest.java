@@ -3,14 +3,11 @@ import by.student.trainDesign.storage.CargoStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CargoStorageTest {
     private CargoStorage cargoStorage;
     private final Address address = new Address("Belarus", "Brest", "Leninist", "Alaya", 5);
-    private final Date expectedDeliveryDate = new Date(System.currentTimeMillis() + 172_800_000);
 
     @BeforeEach
     public void before() {

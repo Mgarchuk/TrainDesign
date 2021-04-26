@@ -18,6 +18,8 @@ public class Train {
         this.number = number;
         this.departureStation = departureStation;
         this.arrivalStation = arrivalStation;
+
+        logger.info("Train created");
     }
 
     public Station getDepartureStation() {
@@ -128,6 +130,7 @@ public class Train {
             next.getPrevious().setNext(newNode);
             next.setPrevious(newNode);
         }
+        logger.info("Carriage added to position: {}", position);
     }
 
     public void removeCarriageAt(int position) {
@@ -145,6 +148,8 @@ public class Train {
             removingNode.getPrevious().setNext(removingNode.getNext());
             removingNode.getNext().setPrevious(removingNode.getPrevious());
         }
+
+        logger.info("Carriage removed from position: {}", position);
     }
 
     private CarriageNode getNodeAt(int position) {
@@ -154,5 +159,4 @@ public class Train {
         }
         return next;
     }
-
 }

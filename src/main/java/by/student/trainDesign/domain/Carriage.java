@@ -1,5 +1,8 @@
 package by.student.trainDesign.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Date;
 
 public class Carriage {
@@ -9,6 +12,8 @@ public class Carriage {
     private double brakingEfficiency;
     private final double trackWidth;
     private final int numberOfAxles;
+
+    private static final Logger logger = LoggerFactory.getLogger(Carriage.class.getName());
 
     public Carriage(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth, int numberOfAxles) {
         if (brakingEfficiency > 1 || brakingEfficiency < 0) {
@@ -20,6 +25,8 @@ public class Carriage {
         this.brakingEfficiency = brakingEfficiency;
         this.trackWidth = trackWidth;
         this.numberOfAxles = numberOfAxles;
+
+        logger.info("Carriage created");
     }
 
     public int getNumber() {

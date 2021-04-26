@@ -16,8 +16,6 @@ public class UserTest {
                 12.04, new Date(10), new Date(1000));
     }
 
-    //мб длбавить юзер айди в тикет
-    //в 1 тесте есть то же что и во втором, норм?
     @Test
     public void createUserTest(){
         User user_1 = new User("1", "Marina", "Garchuk", Age.of(20));
@@ -47,8 +45,6 @@ public class UserTest {
         assertEquals(user_2.getLastName(), "Vorona");
         assertEquals(user_2.getPatronymic(), "Nikolaevna");
 
-
-        //количество билетов отследить
         Ticket firstTicket = getRandomTicket("1");
         user_2.addTicket(firstTicket);
         assertEquals(user_2.getTickets().size(), 1);

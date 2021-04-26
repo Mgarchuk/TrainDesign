@@ -1,5 +1,8 @@
 package by.student.trainDesign.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Date;
 
 public class Ticket {
@@ -14,6 +17,7 @@ public class Ticket {
     private final Date arrivalDate;
     private boolean isBedLinenIncluded;
 
+    private static final Logger logger = LoggerFactory.getLogger(Ticket.class.getName());
 
     public Ticket(String ticketId, int passengerCarriageId, int placeNumber, Station departureStation,
                   Station arrivalStation, double price, Date departureDate, Date arrivalDate,
@@ -27,6 +31,8 @@ public class Ticket {
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
         this.isBedLinenIncluded = isBedLinenIncluded;
+
+        logger.info("Ticket created");
     }
 
     public Ticket(String ticketId, int passengerCarriageId, int placeNumber, Station departureStation,
@@ -101,5 +107,4 @@ public class Ticket {
         isBedLinenIncluded = bedLinenIncluded;
     }
 
-    // проверка валидности билета
 }

@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AgeTest {
 
-    //норм ли название
     @Test
     public void createAgeTest() {
         Age age = new Age((byte) 10);
@@ -18,5 +17,4 @@ public class AgeTest {
         assertThrows(IllegalArgumentException.class, () -> new Age((byte) -19));
         assertThrows(IllegalArgumentException.class, () -> new Age((byte) 199));
     }
-
 }
