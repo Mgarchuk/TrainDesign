@@ -8,6 +8,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CarriageStorageTest {
+
     private CarriageStorage carriageStorage;
 
     @BeforeEach

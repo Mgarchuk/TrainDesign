@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +18,7 @@ public class LocomotiveTest {
 
     @Test
     public void createLocomotiveTest() {
-        ArrayList<Locomotive> locomotivesList = new ArrayList<>();
+        List<Locomotive> locomotivesList = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
             locomotivesList.add(getRandomLocomotive(i));
             assertEquals(locomotivesList.get(i).getNumber(), i);
@@ -31,6 +32,23 @@ public class LocomotiveTest {
         Locomotive locomotive = new Locomotive(10, 3010, new Date(5000), 0.5, 2.8,
                 10, new User("4", "Nikita", "Garchuk", Age.of(60), true));
 
+        assertEquals(locomotive.getNumber(), 10);
+        assertEquals(locomotive.getWeight(), 3010);
+        assertEquals(locomotive.getDateOfManufacture(), new Date(5000));
+        assertEquals(locomotive.getBrakingEfficiency(), 0.5);
+        assertEquals(locomotive.getTrackWidth(), 2.8);
+        assertEquals(locomotive.getNumberOfAxles(), 10);
+        assertEquals(locomotive.getDriver().getId(), "4");
+        assertEquals(locomotive.getDriver().getFirstName(), "Nikita");
+        assertEquals(locomotive.getDriver().getLastName(), "Garchuk");
+        assertEquals(locomotive.getDriver().getAge().intValue(), 60);
+        assertTrue(locomotive.getDriver().isTrainDrivenLicense());
+    }
+
+    @Test
+    public void setAndGetDriverTest() {
+        Locomotive locomotive = new Locomotive(10, 3010, new Date(5000), 0.5, 2.8,
+                10, new User("4", "Nikita", "Garchuk", Age.of(60), true));
         assertEquals(locomotive.getNumber(), 10);
         assertEquals(locomotive.getWeight(), 3010);
         assertEquals(locomotive.getDateOfManufacture(), new Date(5000));

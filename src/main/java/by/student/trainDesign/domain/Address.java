@@ -5,14 +5,14 @@ import org.slf4j.LoggerFactory;
 
 public class Address {
 
+    private static final Logger logger = LoggerFactory.getLogger(Address.class.getName());
+
     private final String country;
     private final String region;
     private final String district;
     private final String street;
     private final String numberOfHouse;
     private String numberOfFlat;
-
-    private static final Logger logger = LoggerFactory.getLogger(Address.class.getName());
 
     public Address(String country, String region, String district, String street, String numberOfHouse) {
         this.country = country;

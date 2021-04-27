@@ -4,6 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Cargo {
+
+    private static final Logger logger = LoggerFactory.getLogger(Cargo.class.getName());
+
     private final int number;
     private final double weight;
     private final Dimensions dimensions;
@@ -11,8 +14,6 @@ public class Cargo {
     private Station arrivalStation;
     private Address destination;
     private final TypeOfCargo typeOfCargo;
-
-    private static final Logger logger = LoggerFactory.getLogger(Cargo.class.getName());
 
     public Cargo(int number, double weight, TypeOfCargo typeOfCargo, Dimensions dimensions, Station dispatchStation, Station arrivalStation, Address destination) {
         this.number = number;

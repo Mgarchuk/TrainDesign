@@ -2,10 +2,12 @@ import by.student.trainDesign.domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CargoTest {
+
     private final Address generalAddress = new Address("Belarus", "Minsk", "Sovetsky",
             "Leonida Bedy", 4);
 
@@ -16,7 +18,7 @@ public class CargoTest {
 
     @Test
     public void createCargoTest() {
-        ArrayList<Cargo> cargoList = new ArrayList<>();
+        List<Cargo> cargoList = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
             cargoList.add(getRandomAddress(i));
             assertEquals(cargoList.get(i).getNumber(), i);
@@ -61,6 +63,5 @@ public class CargoTest {
         assertEquals(cargo_2.getDestination().getStreet(), "Sovetskaya");
         assertEquals(cargo_2.getDestination().getNumberOfHouse(), "4");
         assertEquals(cargo_2.getDestination().getNumberOfFlat(), "23");
-
     }
 }

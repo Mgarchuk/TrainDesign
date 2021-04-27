@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +17,7 @@ public class TicketTest {
 
     @Test
     public void createTicketTest() {
-        ArrayList<Ticket> ticketsList = new ArrayList<>();
+        List<Ticket> ticketsList = new ArrayList<>();
 
         for (int i = 0; i < 10; ++i) {
             ticketsList.add(getRandomTicket(String.valueOf(i)));

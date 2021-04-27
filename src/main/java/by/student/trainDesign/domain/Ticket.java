@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 
 public class Ticket {
+
+    private static final Logger logger = LoggerFactory.getLogger(Ticket.class.getName());
+
     private final String ticketId;
     private String userId;
     private final int passengerCarriageId;
@@ -16,8 +19,6 @@ public class Ticket {
     private final Date departureDate;
     private final Date arrivalDate;
     private boolean isBedLinenIncluded;
-
-    private static final Logger logger = LoggerFactory.getLogger(Ticket.class.getName());
 
     public Ticket(String ticketId, int passengerCarriageId, int placeNumber, Station departureStation,
                   Station arrivalStation, double price, Date departureDate, Date arrivalDate,
@@ -106,5 +107,4 @@ public class Ticket {
     public void setBedLinenIncluded(boolean bedLinenIncluded) {
         isBedLinenIncluded = bedLinenIncluded;
     }
-
 }

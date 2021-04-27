@@ -6,13 +6,13 @@ import org.slf4j.LoggerFactory;
 
 public class Train {
 
+    private static final Logger logger = LoggerFactory.getLogger(Train.class.getName());
+
     private final int number;
     private CarriageNode root, end;
     private int size = 0;
     private final Station departureStation;
     private final Station arrivalStation;
-
-    private static final Logger logger = LoggerFactory.getLogger(Train.class.getName());
 
     public Train(int number, Station departureStation, Station arrivalStation) {
         this.number = number;
@@ -99,7 +99,7 @@ public class Train {
 
     public void removeFirstCarriage() {
         if (size == 0) {
-            throw new IndexOutOfBoundsException("Train is empty"); // тут мб другой эксепшн
+            throw new IndexOutOfBoundsException("Train is empty");
         }
 
         size--;

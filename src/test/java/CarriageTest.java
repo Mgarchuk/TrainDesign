@@ -3,18 +3,19 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CarriageTest {
 
-    private Carriage getRandomCarriage(int number){
+    private Carriage getRandomCarriage(int number) {
         return new Carriage(number, 3000, new Date(10000), 0.78, 2.8, 10);
     }
 
     @Test
     public void createCarriageTest() {
-        ArrayList<Carriage> carriagesList = new ArrayList<>();
+        List<Carriage> carriagesList = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
             carriagesList.add(getRandomCarriage(i));
             assertEquals(carriagesList.get(i).getNumber(), i);
@@ -37,9 +38,8 @@ public class CarriageTest {
         assertEquals(carriage.getBrakingEfficiency(), 0.88);
 
         assertThrows(IllegalArgumentException.class, () -> new Carriage(10, 5000, new Date(19000),
-                -1,2.8, 20));
+                -1, 2.8, 20));
         assertThrows(IllegalArgumentException.class, () -> new Carriage(10, 5000, new Date(19000),
-                1.01,2.8, 20));
-
+                1.01, 2.8, 20));
     }
 }

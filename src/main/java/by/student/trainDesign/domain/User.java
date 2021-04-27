@@ -4,20 +4,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
+
+    private static final Logger logger = LoggerFactory.getLogger(User.class.getName());
+
     private final String id;
     private String firstName;
     private String lastName;
     private String patronymic;
     private Age age;
     private boolean isTrainDrivenLicense;
-    private ArrayList<Ticket> tickets = new ArrayList<>();
-
-    private static final Logger logger = LoggerFactory.getLogger(User.class.getName());
+    private List<Ticket> tickets = new ArrayList<>();
 
     public User(String id, String firstName, String lastName, String patronymic, Age age, boolean isTrainDrivenLicense,
-                ArrayList<Ticket> tickets) {
+                List<Ticket> tickets) {
         this(id, firstName, lastName, age, isTrainDrivenLicense);
         this.patronymic = patronymic;
         this.tickets = tickets;
@@ -43,16 +45,17 @@ public class User {
         this.patronymic = patronymic;
     }
 
-    public User(String id, String firstName, String lastName, String patronymic, Age age, ArrayList<Ticket> tickets) {
+    public User(String id, String firstName, String lastName, String patronymic, Age age, List<Ticket> tickets) {
         this(id, firstName, lastName, patronymic, age);
         this.tickets = tickets;
     }
 
     public User(String id, String firstName, String lastName, Age age) {
-        this(id, firstName, lastName, age, false);
+        this(id, firstName, lastName, age,
+                false);
     }
 
-    public User(String id, String firstName, String lastName, Age age, ArrayList<Ticket> tickets) {
+    public User(String id, String firstName, String lastName, Age age, List<Ticket> tickets) {
         this(id, firstName, lastName, age);
         this.tickets = tickets;
     }
@@ -81,7 +84,7 @@ public class User {
         return isTrainDrivenLicense;
     }
 
-    public ArrayList<Ticket> getTickets() {
+    public List<Ticket> getTickets() {
         return tickets;
     }
 
@@ -117,7 +120,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public void setTickets(ArrayList<Ticket> tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 

@@ -7,7 +7,6 @@ public class AddressTest {
 
     @Test
     public void createAddressTest() {
-
         Address address_1 = new Address("Belarus", "Minsk", "Leninsky", "Panaetova", 4);
         assertEquals(address_1.getCountry(), "Belarus");
         assertEquals(address_1.getRegion(), "Minsk");

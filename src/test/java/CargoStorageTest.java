@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CargoStorageTest {
+
     private CargoStorage cargoStorage;
     private final Address address = new Address("Belarus", "Brest", "Leninist", "Alaya", 5);
 

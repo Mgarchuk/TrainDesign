@@ -4,11 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CarriageNode {
-    private Carriage value;
-    private CarriageNode next, previous;
 
     private static final Logger logger = LoggerFactory.getLogger(Carriage.class.getName());
 
+    private Carriage value;
+    private CarriageNode next, previous;
 
     public CarriageNode(Carriage value, CarriageNode next, CarriageNode previous) {
         this.value = value;

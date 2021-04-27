@@ -6,9 +6,10 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 
 public class Locomotive extends Carriage {
-    private User driver;
 
     private static final Logger logger = LoggerFactory.getLogger(Locomotive.class.getName());
+
+    private User driver;
 
     public Locomotive(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth, int numberOfAxles, User driver) {
         super(number, weight, dateOfManufacture, brakingEfficiency, trackWidth, numberOfAxles);

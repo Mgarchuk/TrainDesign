@@ -1,9 +1,12 @@
+import by.student.trainDesign.domain.Age;
 import by.student.trainDesign.domain.PassengerCarriage;
 import by.student.trainDesign.domain.TypeOfPassengerCarriage;
+import by.student.trainDesign.domain.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -18,8 +21,8 @@ public class PassengerCarriageTest {
     @Test
     public void createPassengerCarriageTest() {
 
-        ArrayList<PassengerCarriage> passengerCarriagesList = new ArrayList<>();
-        for( int i = 0; i < 10; ++i){
+        List<PassengerCarriage> passengerCarriagesList = new ArrayList<>();
+        for (int i = 0; i < 10; ++i) {
             passengerCarriagesList.add(getRandomPassengerCarriage(i));
             assertEquals(passengerCarriagesList.get(i).getNumber(), i);
         }
@@ -41,5 +44,28 @@ public class PassengerCarriageTest {
 
         assertEquals(passengerCarriage.getWeight(), 5019);
         assertEquals(passengerCarriage.getBrakingEfficiency(), 0.89);
+    }
+
+    @Test
+    public void addAndGetPassengerTest() {
+        PassengerCarriage passengerCarriage = new PassengerCarriage(10, 5000, new Date(700999),
+                0.9, 2.8, 24, 96, TypeOfPassengerCarriage.RESERVED_SEAT);
+        assertEquals(passengerCarriage.getPassengers().size(), 0);
+
+        User user_1 = new User("1", "Marina", "Garchuk", Age.of(20));
+        passengerCarriage.addPassenger(user_1);
+        assertEquals(passengerCarriage.getPassengers().size(), 1);
+        assertEquals(passengerCarriage.getPassengers().get(0).getId(), "1");
+        assertEquals(passengerCarriage.getPassengers().get(0).getFirstName(), "Marina");
+        assertEquals(passengerCarriage.getPassengers().get(0).getLastName(), "Garchuk");
+        assertEquals(passengerCarriage.getPassengers().get(0).getAge(), Age.of(20));
+
+        User user_2 = new User("2", "Katya", "Garchuk", Age.of(21));
+        passengerCarriage.addPassenger(user_2);
+        assertEquals(passengerCarriage.getPassengers().size(), 2);
+        assertEquals(passengerCarriage.getPassengers().get(1).getId(), "2");
+        assertEquals(passengerCarriage.getPassengers().get(1).getFirstName(), "Katya");
+        assertEquals(passengerCarriage.getPassengers().get(1).getLastName(), "Garchuk");
+        assertEquals(passengerCarriage.getPassengers().get(1).getAge(), Age.of(21));
     }
 }

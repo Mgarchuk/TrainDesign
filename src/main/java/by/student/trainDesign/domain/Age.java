@@ -9,10 +9,11 @@ import java.util.Map;
 import static com.google.common.base.Preconditions.checkArgument;
 
 public class Age {
-    public static Map<Byte, Age> agesList = new HashMap<>();
-    private final byte value;
 
     private static final Logger logger = LoggerFactory.getLogger(Age.class.getName());
+
+    public static Map<Byte, Age> agesList = new HashMap<>();
+    private final byte value;
 
     public Age(byte value) {
         checkArgument(value >= 0, "Age must be >= 0");
