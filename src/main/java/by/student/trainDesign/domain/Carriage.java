@@ -16,7 +16,8 @@ public class Carriage {
     private final double trackWidth;
     private final int numberOfAxles;
 
-    public Carriage(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth, int numberOfAxles) {
+    public Carriage(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth,
+                    int numberOfAxles) {
         if (brakingEfficiency > 1 || brakingEfficiency < 0) {
             throw new IllegalArgumentException("braking efficiency cannot matter outside of 0 to 1");
         }

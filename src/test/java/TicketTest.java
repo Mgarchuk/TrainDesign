@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TicketTest {
 
     private Ticket getRandomTicket(String number) {
-        return new Ticket(number, 12, 12, Station.BREST_CENTRAL, Station.MOGILEV_1, 23.90, new Date(500), new Date(800));
+        return new Ticket(number, 12, 12, Station.BREST_CENTRAL, Station.MOGILEV_1,
+                23.90, new Date(500), new Date(800));
     }
 
     @Test

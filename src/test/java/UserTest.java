@@ -124,8 +124,8 @@ public class UserTest {
 
     @Test
     public void addAndGetTicketTest() {
-        Ticket firstTicket = new Ticket("10", 7, 14, Station.BREST_CENTRAL, Station.MINSK_PASSENGER,
-                10.99, new Date(1000), new Date(10000));
+        Ticket firstTicket = new Ticket("10", 7, 14, Station.BREST_CENTRAL,
+                Station.MINSK_PASSENGER,10.99, new Date(1000), new Date(10000));
         User user = new User("12", "Masha", "Goga", Age.of(78));
         user.addTicket(firstTicket);
         assertEquals(user.getId(), "12");
@@ -162,11 +162,11 @@ public class UserTest {
 
     @Test
     public void cancelTicketTest() {
-        Ticket firstTicket = new Ticket("11", 6, 35, Station.VITEBSK, Station.MINSK_PASSENGER,
-                10.99, new Date(1000), new Date(10000));
+        Ticket firstTicket = new Ticket("11", 6, 35, Station.VITEBSK,
+                Station.MINSK_PASSENGER,10.99, new Date(1000), new Date(10000));
 
-        Ticket secondTicket = new Ticket("12", 6, 33, Station.VITEBSK, Station.MINSK_PASSENGER,
-                10.99, new Date(1000), new Date(10000));
+        Ticket secondTicket = new Ticket("12", 6, 33, Station.VITEBSK,
+                Station.MINSK_PASSENGER,10.99, new Date(1000), new Date(10000));
 
         User user = new User("111", "Masha", "Goncharuck", Age.of(18));
         user.addTicket(firstTicket);

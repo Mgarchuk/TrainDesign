@@ -23,7 +23,8 @@ public class Address {
         logger.info("Address created");
     }
 
-    public Address(String country, String region, String district, String street, String numberOfHouse, String numberOfFlat) {
+    public Address(String country, String region, String district, String street, String numberOfHouse,
+                   String numberOfFlat) {
         this(country, region, district, street, numberOfHouse);
         this.numberOfFlat = numberOfFlat;
     }

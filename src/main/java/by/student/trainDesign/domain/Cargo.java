@@ -15,7 +15,8 @@ public class Cargo {
     private Address destination;
     private final TypeOfCargo typeOfCargo;
 
-    public Cargo(int number, double weight, TypeOfCargo typeOfCargo, Dimensions dimensions, Station dispatchStation, Station arrivalStation, Address destination) {
+    public Cargo(int number, double weight, TypeOfCargo typeOfCargo, Dimensions dimensions, Station dispatchStation,
+                 Station arrivalStation, Address destination) {
         this.number = number;
         this.weight = weight;
         this.typeOfCargo = typeOfCargo;

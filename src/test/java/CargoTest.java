@@ -12,8 +12,8 @@ public class CargoTest {
             "Leonida Bedy", 4);
 
     private Cargo getRandomAddress(int number) {
-        return new Cargo(number, 10, TypeOfCargo.GENERAL, new Dimensions(10, 10, 10), Station.MINSK_NORTH,
-                Station.BREST_EAST, generalAddress);
+        return new Cargo(number, 10, TypeOfCargo.GENERAL, new Dimensions(10, 10, 10),
+                Station.MINSK_NORTH, Station.BREST_EAST, generalAddress);
     }
 
     @Test

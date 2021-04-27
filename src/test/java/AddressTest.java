@@ -17,7 +17,8 @@ public class AddressTest {
         address_1.setNumberOfFlat("10");
         assertEquals(address_1.getNumberOfFlat(), "10");
 
-        Address address_2 = new Address("Belarus", "Brest", "Sovetsky", "Panaetova", 9, 10);
+        Address address_2 = new Address("Belarus", "Brest", "Sovetsky", "Panaetova",
+                9, 10);
         assertEquals(address_2.getCountry(), "Belarus");
         assertEquals(address_2.getRegion(), "Brest");
         assertEquals(address_2.getDistrict(), "Sovetsky");
@@ -35,7 +36,8 @@ public class AddressTest {
         address_3.setNumberOfFlat(4);
         assertEquals(address_3.getNumberOfFlat(), "4");
 
-        Address address_4 = new Address("Belarus", "Gomel", "Sovetsky", "Orda", "8/1", "10a");
+        Address address_4 = new Address("Belarus", "Gomel", "Sovetsky", "Orda",
+                "8/1", "10a");
         assertEquals(address_4.getCountry(), "Belarus");
         assertEquals(address_4.getRegion(), "Gomel");
         assertEquals(address_4.getDistrict(), "Sovetsky");

@@ -11,7 +11,8 @@ public class Locomotive extends Carriage {
 
     private User driver;
 
-    public Locomotive(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth, int numberOfAxles, User driver) {
+    public Locomotive(int number, double weight, Date dateOfManufacture, double brakingEfficiency, double trackWidth,
+                      int numberOfAxles, User driver) {
         super(number, weight, dateOfManufacture, brakingEfficiency, trackWidth, numberOfAxles);
         if (driver.getAge().intValue() < 18 || !driver.isTrainDrivenLicense()) {
             throw new IllegalArgumentException("The driver's age must be over 18 years old and he should has license");
