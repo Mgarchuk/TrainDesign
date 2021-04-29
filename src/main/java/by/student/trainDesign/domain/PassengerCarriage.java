@@ -33,7 +33,27 @@ public class PassengerCarriage extends Carriage {
     }
 
     public void addPassenger(User user) {
+        if (numberOfSeats == passengers.size()) {
+            throw new IllegalArgumentException("No free places in carriage");
+        }
         passengers.add(user);
+    }
+
+    public void deletePassenger(String userId) {
+        for (int i = 0; i < passengers.size(); ++i) {
+            if (userId.equals(passengers.get(i).getId())) {
+                passengers.remove(passengers.get(i));
+                break;
+            }
+        }
+    }
+
+    public void deletePassenger(User user) {
+        passengers.remove(user);
+    }
+
+    public void clearCarriage() {
+        passengers.clear();
     }
 
     public List<User> getPassengers() {

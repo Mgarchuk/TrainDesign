@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PassengerCarriageTest {
 
@@ -49,7 +48,7 @@ public class PassengerCarriageTest {
     @Test
     public void addAndGetPassengerTest() {
         PassengerCarriage passengerCarriage = new PassengerCarriage(10, 5000, new Date(700999),
-                0.9, 2.8, 24, 96, TypeOfPassengerCarriage.RESERVED_SEAT);
+                0.9, 2.8, 24, 2, TypeOfPassengerCarriage.RESERVED_SEAT);
         assertEquals(passengerCarriage.getPassengers().size(), 0);
 
         User user_1 = new User("1", "Marina", "Garchuk", Age.of(20));
@@ -67,5 +66,39 @@ public class PassengerCarriageTest {
         assertEquals(passengerCarriage.getPassengers().get(1).getFirstName(), "Katya");
         assertEquals(passengerCarriage.getPassengers().get(1).getLastName(), "Garchuk");
         assertEquals(passengerCarriage.getPassengers().get(1).getAge(), Age.of(21));
+
+        User user_3 = new User("3", "Sonya", "Saharchuk", Age.of(24));
+        assertThrows(IllegalArgumentException.class, () -> passengerCarriage.addPassenger(user_3));
+    }
+
+    @Test
+    public void deletePassengersTest() {
+        PassengerCarriage passengerCarriage = new PassengerCarriage(10, 5000, new Date(700999),
+                0.9, 2.8, 24, 2, TypeOfPassengerCarriage.RESERVED_SEAT);
+        assertEquals(passengerCarriage.getPassengers().size(), 0);
+
+        User user_1 = new User("1", "Marina", "Garchuk", Age.of(20));
+        User user_2 = new User("2", "Katya", "Garchuk", Age.of(21));
+        passengerCarriage.addPassenger(user_1);
+        passengerCarriage.addPassenger(user_2);
+
+        assertEquals(passengerCarriage.getPassengers().size(), 2);
+
+        passengerCarriage.deletePassenger("2");
+        assertEquals(passengerCarriage.getPassengers().size(), 1);
+        assertThrows(IndexOutOfBoundsException.class, () -> passengerCarriage.getPassengers().get(1));
+
+        passengerCarriage.deletePassenger(user_1);
+        assertEquals(passengerCarriage.getPassengers().size(), 0);
+        assertThrows(IndexOutOfBoundsException.class, () -> passengerCarriage.getPassengers().get(0));
+
+        passengerCarriage.addPassenger(user_1);
+        passengerCarriage.addPassenger(user_2);
+        assertEquals(passengerCarriage.getPassengers().size(), 2);
+
+        passengerCarriage.clearCarriage();
+        assertEquals(passengerCarriage.getPassengers().size(), 0);
+
+        passengerCarriage.deletePassenger(user_1);
     }
 }

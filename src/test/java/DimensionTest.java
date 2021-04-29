@@ -11,4 +11,10 @@ public class DimensionTest {
         assertEquals(dimensions.getWidth(), 20);
         assertEquals(dimensions.getHeight(), 30);
     }
+
+    @Test
+    public void getVolumeTest() {
+        Dimensions dimensions = new Dimensions(10, 20, 30);
+        assertEquals(dimensions.getVolume(), 6000);
+    }
 }
